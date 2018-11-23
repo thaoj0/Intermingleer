@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Hello World!</title>
+    <style>
+        .inputbox {
+            text-align: center;
+        }  
+        button:hover{
+            background-color: yellow;
+        }
+    </style>
+      <p class = "inputbox">
+      <input type="text" id="pw1" placeholder="text"><br>
+      <input type="text" id="pw2" placeholder="text"><br>
+      <p class = "inputbox" id="type">Word Interchanger!</p>
+      <button class="inputbox" type="inputbox" id="clickButton">Click!</button>
+      </p>
+  </head>
+  <body>
+      <script>
+          document.getElementById("clickButton").addEventListener("click", function(){ 
+              /*
+            var fs = require('fs');
+var stream = fs.createWriteStream("my_file.txt");
+stream.once('open', function(fd) {
+  stream.write("My first \n second \n");
+  stream.write("My second \n");
+  stream.end();
+});*/
+            var pw1 = (document.getElementById("pw1").value).split("");
+            var pw2 = (document.getElementById("pw2").value).split("");
+            var pw3 = "";
+            while(pw1.length + pw2.length){
+                if(pw1.length>0){
+                    pw3 += pw1.shift();
+                }
+                if(pw2.length>0){
+                    pw3 += pw2.shift();
+                }
+                  
+            }
+            if(pw3.length===0) pw3 = "1";
+            document.getElementById("type").innerHTML = pw3;
+            
+});  
+      </script>  
+  </body>
+</html>
