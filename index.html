@@ -41,7 +41,12 @@ stream.once('open', function(fd) {
             }
             if(pw3.length===0) pw3 = "1";
             document.getElementById("type").innerHTML = pw3;
-            
+      
+            /* Select the text field */
+            pw3.select();
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
 });  
       </script>  
   </body>
