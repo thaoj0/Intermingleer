@@ -9,10 +9,10 @@
             background-color: yellow;
         }
     </style>
-      <p class = "inputbox">
-      <input type="text" id="pw1" placeholder="text"><br>
-      <input type="text" id="pw2" placeholder="text"><br>
       <p class = "inputbox" id="type">Word Interchanger!</p>
+      <input type="text" id="pw1" placeholder="Word 1"><br>
+      <input type="text" id="pw2" placeholder="Word 2"><br>
+      <input type="text" id="pw3" placeholder="Interchanged Word"><br>
       <button class="inputbox" type="inputbox" id="clickButton">Click!</button>
       </p>
   </head>
@@ -40,11 +40,10 @@ stream.once('open', function(fd) {
                   
             }
             if(pw3.length===0) pw3 = "1";
-            document.getElementById("type").innerHTML = pw3;
-            document.getElementById("type").value = pw3;
+            document.getElementById("pw3").value = pw3;
             
             /* Select the text field */
-            document.getElementById("type").select();
+            document.getElementById("pw3").select();
 
             /* Copy the text inside the text field */
             document.execCommand("copy");
