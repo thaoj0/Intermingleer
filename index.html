@@ -41,7 +41,8 @@ stream.once('open', function(fd) {
             }
             if(pw3.length===0) pw3 = "1";
             document.getElementById("type").innerHTML = pw3;
-      
+            document.getElementById("type").value = pw3;
+            
             /* Select the text field */
             document.getElementById("type").select();
 
