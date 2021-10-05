@@ -9,7 +9,6 @@
             background-color: yellow;
         }
     </style>
-      Word Intermingleer
       <p class = "inputbox" id="type">Word Interchanger!</p>
       <p class = "inputbox">
       <input type="text" id="pw1" placeholder="Word 1"><br>
@@ -57,7 +56,7 @@ stream.once('open', function(fd) {
             var pw2 = document.getElementById("pw2").value;
             var pw3 = "";
             while(pw1.length){
-              pw3 = pw2.replace(pw1.shift(),'');
+              pw3 = pw2.replaceAll(pw1.shift(),'');
             }
             if(pw3.length===0) pw3 = "-Empty-";
             document.getElementById("pw3").value = pw3;
