@@ -9,13 +9,14 @@
             background-color: yellow;
         }
     </style>
-    
+      Word Intermingleer
       <p class = "inputbox" id="type">Word Interchanger!</p>
       <p class = "inputbox">
       <input type="text" id="pw1" placeholder="Word 1"><br>
       <input type="text" id="pw2" placeholder="Word 2"><br>
       <input type="text" id="pw3" placeholder="Interchanged Word"><br>
-      <button class="inputbox" type="inputbox" id="clickButton">Click!</button>
+      <button class="inputbox" type="inputbox" id="clickButton">Intermingle</button>
+      <button class="inputbox" type="inputbox" id="XOR">XOR</button>
       </p>
   </head>
   <body>
@@ -41,7 +42,7 @@ stream.once('open', function(fd) {
                 }
                   
             }
-            if(pw3.length===0) pw3 = "1";
+            if(pw3.length===0) pw3 = "-Empty-";
             document.getElementById("pw3").value = pw3;
             
             /* Select the text field */
@@ -49,7 +50,18 @@ stream.once('open', function(fd) {
 
             /* Copy the text inside the text field */
             document.execCommand("copy");
-});  
+          });  
+            
+          document.getElementById("XOR").addEventListener("click", function(){ 
+            var pw1 = (document.getElementById("pw1").value).split("");
+            var pw2 = document.getElementById("pw2").value;
+            var pw3 = "";
+            while(pw1.length){
+              pw3 = pw2.replace(pw1.shift(),'');
+            }
+            if(pw3.length===0) pw3 = "-Empty-";
+            document.getElementById("pw3").value = pw3;
+          });  
       </script>  
   </body>
 </html>
